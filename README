@@ -35,6 +35,23 @@ How Do I Build It?
 In the corkscrew directory type './configure' then 'make'.  Check
 out the INSTALL file for more information.
 
+-------------------------------------------------------------------------------
+on ubuntu(tested on ubuntu 16.04) you should install autoconf and libtool first:
+```
+sudo apt install autoconf libtool
+
+# then run following
+libtoolize --force
+Consider adding AC_CONFIG_MACRO_DIR([m4]) to configure.ac
+and re-run libtoolize --force.
+
+libtoolize --force
+aclocal
+autoheader
+automake --force-missing --add-missing
+autoconf
+
+```
 
 How Do I Install It?
 --------------------
